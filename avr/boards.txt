@@ -1,0 +1,42 @@
+# See: http://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
+
+menu.cpu=Processor
+
+##############################################################
+
+baretouch.name=Bare Conductive Touch Board
+baretouch.vid.0=0xACDC
+baretouch.pid.0=0x0003
+baretouch.vid.1=0xACDC
+baretouch.pid.1=0x8003
+baretouch.upload.tool=arduino:avrdude
+baretouch.upload.protocol=avr109
+baretouch.upload.maximum_size=28672
+baretouch.upload.maximum_data_size=2560
+baretouch.upload.speed=57600
+baretouch.upload.disable_flushing=true
+baretouch.upload.use_1200bps_touch=true
+baretouch.upload.wait_for_upload_port=true
+
+baretouch.bootloader.tool=arduino:avrdude
+baretouch.bootloader.low_fuses=0xff
+baretouch.bootloader.high_fuses=0xd8
+baretouch.bootloader.extended_fuses=0xcb
+baretouch.bootloader.file=caterina/Caterina-BareTouch.hex
+baretouch.bootloader.unlock_bits=0x3F
+baretouch.bootloader.lock_bits=0x2F
+
+baretouch.build.mcu=atmega32u4
+baretouch.build.f_cpu=16000000L
+baretouch.build.vid=0xACDC
+baretouch.build.pid=0x8003
+baretouch.build.usb_product="Bare Conductive Touch Board"
+baretouch.build.usb_manufacturer="Bare Conductive Ltd."
+baretouch.build.board=AVR_BARETOUCH
+baretouch.build.core=arduino:arduino
+baretouch.build.variant=arduino:leonardo
+baretouch.build.extra_flags={build.usb_flags}
+
+baretouch.variant=arduino:standard
+
+##############################################################
