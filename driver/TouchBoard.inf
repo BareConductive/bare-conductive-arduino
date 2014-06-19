@@ -86,11 +86,11 @@ ServiceBinary=%12%\%DRIVERFILENAME%.sys
 [SourceDisksFiles]
 [SourceDisksNames]
 [DeviceList]
-%DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_8003
+%DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_0003
 %DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_8003&MI_00
 
 [DeviceList.NTamd64]
-%DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_8003
+%DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_0003
 %DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_8003&MI_00
 
 ;------------------------------------------------------------------------------
