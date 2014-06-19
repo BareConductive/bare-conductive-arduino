@@ -57,8 +57,8 @@
 # official Arduino LLC VID
 # VID = 0x2341
 
-# unofficial Bare Conductive VID
-VID = 0xACDC
+# official Bare Conductive VID
+VID = 0x2A6E
 
 
 # USB product ID (PID)
@@ -70,12 +70,18 @@ VID = 0xACDC
 # PID = 0x003C
 
 # unofficial Touch Board PID
-PID = 0x0003 # the first Mersenne Prime
-#PID = 0x8003 # use for the corresponding PID.1 to the above
-#PID = 0x0007 # the second Mersenne Prime
-#PID = 0x001F # the third Mersenne Prime
-#PID = 0x007F # the fourth Mersenne Prime
-#PID = 0x1FFF # the fifth Mersenne Prime
+# the first Mersenne Prime
+PID = 0x0003 
+# use for the corresponding PID.1 to the above
+#PID = 0x8003
+# the second Mersenne Prime
+#PID = 0x0007
+# the third Mersenne Prime
+#PID = 0x001F
+# the fourth Mersenne Prime
+#PID = 0x007F
+# the fifth Mersenne Prime
+#PID = 0x1FFF
 
 
 # MCU name

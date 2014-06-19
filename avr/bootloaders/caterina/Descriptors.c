@@ -199,6 +199,8 @@ const USB_Descriptor_String_t ProductString =
 	.UnicodeString			= L"Arduino Micro   "
 	#elif DEVICE_PID == 0x003C
 	.UnicodeString			= L"Arduino Esplora "
+	#elif DEVICE_PID == 0x0003
+	.UnicodeString			= L"Touch Board     "	
 	#else
 	.UnicodeString			= L"USB IO board    "
 	#endif
@@ -210,6 +212,8 @@ const USB_Descriptor_String_t ManufNameString =
 	
 	#if DEVICE_VID == 0x2341
 	.UnicodeString			= L"Arduino LLC"
+	#elif DEVICE_PID == 0x2A6E
+	.UnicodeString			= L"Bare Cond. "	
 	#else
 	.UnicodeString			= L"Unknown    "
 	#endif
