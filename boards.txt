@@ -18,5 +18,7 @@ baretouch.build.vid=0x2A6E
 baretouch.build.pid=0x8003
 baretouch.build.core=arduino:arduino
 baretouch.build.variant=arduino:leonardo
+baretouch.build.usb_product="Touch Board"
+baretouch.build.usb_manufacturer="Bare Conductive"
 
 ##############################################################
