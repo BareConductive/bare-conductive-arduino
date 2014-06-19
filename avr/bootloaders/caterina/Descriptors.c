@@ -208,14 +208,14 @@ const USB_Descriptor_String_t ProductString =
 
 const USB_Descriptor_String_t ManufNameString = 
 {
-	.Header					= {.Size = USB_STRING_LEN(11), .Type = DTYPE_String},
+	.Header					= {.Size = USB_STRING_LEN(16), .Type = DTYPE_String},
 	
 	#if DEVICE_VID == 0x2341
-	.UnicodeString			= L"Arduino LLC"
-	#elif DEVICE_PID == 0x2A6E
-	.UnicodeString			= L"Bare Cond. "	
+	.UnicodeString			= L"Arduino LLC    "
+	#elif DEVICE_VID == 0x2A6E
+	.UnicodeString			= L"Bare Conductive"	
 	#else
-	.UnicodeString			= L"Unknown    "
+	.UnicodeString			= L"Unknown        "
 	#endif
 };
 

@@ -71,7 +71,7 @@ VID = 0x2A6E
 
 # unofficial Touch Board PID
 # the first Mersenne Prime
-PID = 0x0003 
+PID = 0x0003
 # use for the corresponding PID.1 to the above
 #PID = 0x8003
 # the second Mersenne Prime
