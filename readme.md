@@ -6,6 +6,10 @@ Board definitions for Bare Conductive Arduino-compatible boards, needed to use t
 
 Compatible with Arduino 1.0.5+ and 1.5.6+.
 
+## Requirements
+
+* Arduino 1.0.5+ or Arduino 1.5.6+
+
 
 ## Install
 
@@ -36,6 +40,3 @@ Compatible with Arduino 1.0.5+ and 1.5.6+.
 
 
 
-## Requirements
-
-* Arduino 1.0.5+ or Arduino 1.5.6+
