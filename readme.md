@@ -14,7 +14,7 @@ Compatible with Arduino 1.0.5+ and 1.5.6+.
 ## Install
 
 1. Close the Arduino IDE if you have it open.
-1. Download the [.zip](./archive/master.zip) or clone the repository to your local machine - if downloading the .zip, extract the contents somewhere that suits you.
+1. Download the [.zip](https://github.com/bareconductive/bare-conductive-arduino/archive/public.zip) or clone the repository to your local machine - if downloading the .zip, extract the contents somewhere that suits you.
 1. Take the **Bare_Conductive_Arduino** folder and move it to **Arduino Hardware Folder**. This will be different for each operating system: 
 
 	**Windows**
