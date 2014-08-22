@@ -87,11 +87,19 @@ ServiceBinary=%12%\%DRIVERFILENAME%.sys
 [SourceDisksNames]
 [DeviceList]
 %DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_0003
+<<<<<<< HEAD
 %DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_8003&MI_00
 
 [DeviceList.NTamd64]
 %DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_0003
 %DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_8003&MI_00
+=======
+%DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_8003
+
+[DeviceList.NTamd64]
+%DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_0003
+%DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_8003
+>>>>>>> c823c39923780cf6afcba33344856400db00997e
 
 ;------------------------------------------------------------------------------
 ;  String Definitions
