@@ -4,11 +4,9 @@
 
 Board definitions for Bare Conductive Arduino-compatible boards, needed to use the [Bare Conductive Touch Board](http://www.bareconductive.com/touch-board) with full functionality in the [Arduino IDE](http://arduino.cc/en/main/software). 
 
-Compatible with Arduino 1.0.5+ and 1.5.6+.
-
 ## Requirements
 
-* Arduino 1.0.5+ or Arduino 1.5.6+
+* Arduino 1.5.6 or later
 
 
 ## Install
