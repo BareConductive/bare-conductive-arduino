@@ -1,4 +1,4 @@
-[![Bare Conductive](https://www.dropbox.com/s/ltnp128s2ueq040/LOGO_249x99.png?dl=1)](http://www.bareconductive.com/)
+[![Bare Conductive](https://www.dropbox.com/s/p0p71yid2t8tenp/LOGO_256x106.png?dl=1)](http://www.bareconductive.com/)
 
 # Bare Conductive Arduino Hardware Plugins
 
