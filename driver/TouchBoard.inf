@@ -1,4 +1,5 @@
-;     Windows Touch Board Setup File
+;************************************************************
+; Windows USB CDC ACM Setup File
 ; Copyright (c) 2000 Microsoft Corporation
 
 [DefaultInstall]
@@ -9,29 +10,71 @@ Signature="$Windows NT$"
 Class=Ports
 ClassGuid={4D36E978-E325-11CE-BFC1-08002BE10318}
 Provider=%MFGNAME%
-DriverVer=7/1/2012,10.0.0.0
+LayoutFile=layout.inf
+CatalogFile=%MFGFILENAME%.cat
+DriverVer=11/15/2007,5.1.2600.0
 
 [Manufacturer]
-%MFGNAME%=DeviceList, NTx86, NTamd64, NTia64
-
-[SourceDisksNames]
-
-[SourceDisksFiles]
+%MFGNAME%=DeviceList, NTamd64
 
 [DestinationDirs]
 DefaultDestDir=12
 
-[DriverInstall]
-Include=mdmcpq.inf
-CopyFiles=FakeModemCopyFileSection
-AddReg=DriverInstall.AddReg
 
-[DriverInstall.Services]
-Include=mdmcpq.inf
-AddService=usbser, 0x00000002, LowerFilter_Service_Inst
+;------------------------------------------------------------------------------
+;  Windows 2000/XP/Vista-32bit Sections
+;------------------------------------------------------------------------------
 
-[DriverInstall.AddReg]
-HKR,,EnumPropPages32,,"msports.dll,SerialPortPropPageProvider"
+[DriverInstall.nt]
+include=mdmcpq.inf
+CopyFiles=DriverCopyFiles.nt
+AddReg=DriverInstall.nt.AddReg
+
+[DriverCopyFiles.nt]
+usbser.sys,,,0x20
+
+[DriverInstall.nt.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,%DRIVERFILENAME%.sys
+HKR,,EnumPropPages32,,"MsPorts.dll,SerialPortPropPageProvider"
+
+[DriverInstall.nt.Services]
+AddService=usbser, 0x00000002, DriverService.nt
+
+[DriverService.nt]
+DisplayName=%SERVICE%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%12%\%DRIVERFILENAME%.sys
+
+;------------------------------------------------------------------------------
+;  Vista-64bit Sections
+;------------------------------------------------------------------------------
+
+[DriverInstall.NTamd64]
+include=mdmcpq.inf
+CopyFiles=DriverCopyFiles.NTamd64
+AddReg=DriverInstall.NTamd64.AddReg
+
+[DriverCopyFiles.NTamd64]
+%DRIVERFILENAME%.sys,,,0x20
+
+[DriverInstall.NTamd64.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,%DRIVERFILENAME%.sys
+HKR,,EnumPropPages32,,"MsPorts.dll,SerialPortPropPageProvider"
+
+[DriverInstall.NTamd64.Services]
+AddService=usbser, 0x00000002, DriverService.NTamd64
+
+[DriverService.NTamd64]
+DisplayName=%SERVICE%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%12%\%DRIVERFILENAME%.sys
+
 
 ;------------------------------------------------------------------------------
 ;  Vendor and Product ID Definitions
@@ -42,19 +85,13 @@ HKR,,EnumPropPages32,,"msports.dll,SerialPortPropPageProvider"
 ; Note: One INF file can be used for multiple devices with different VID and PIDs.
 ; For each supported device, append ",USB\VID_xxxx&PID_yyyy" to the end of the line.
 ;------------------------------------------------------------------------------
+[SourceDisksFiles]
+[SourceDisksNames]
 [DeviceList]
 %DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_0003
 %DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_8003&MI_00
 
-[DeviceList.NTx86]
-%DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_0003
-%DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_8003&MI_00
-
 [DeviceList.NTamd64]
-%DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_0003
-%DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_8003&MI_00
-
-[DeviceList.NTia64]
 %DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_0003
 %DESCRIPTION%=DriverInstall, USB\VID_2A6E&PID_8003&MI_00
 
@@ -64,7 +101,7 @@ HKR,,EnumPropPages32,,"msports.dll,SerialPortPropPageProvider"
 ;Modify these strings to customize your device
 ;------------------------------------------------------------------------------
 [Strings]
-MFGFILENAME="Bare Conductive Ltd."
+MFGFILENAME="CDC_vista"
 DRIVERFILENAME ="usbser"
 MFGNAME="Bare Conductive"
 INSTDISK="Bare Conductive Touch Board Driver Installer"
