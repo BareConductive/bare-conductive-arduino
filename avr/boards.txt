@@ -1,7 +1,6 @@
 # See: http://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
 
 menu.cpu=Processor
-
 ##############################################################
 
 baretouch.name=Bare Conductive Touch Board
@@ -38,5 +37,42 @@ baretouch.build.variant=arduino:leonardo
 baretouch.build.extra_flags={build.usb_flags}
 
 baretouch.variant=arduino:standard
+
+##############################################################
+
+baretouchmidi.name=Bare Conductive Touch Board (USB MIDI, iPad compatible)
+baretouchmidi.vid.0=0x2A6E
+baretouchmidi.pid.0=0x0003
+baretouchmidi.vid.1=0x2A6E
+baretouchmidi.pid.1=0x8003
+baretouchmidi.upload.tool=arduino:avrdude
+baretouchmidi.upload.protocol=avr109
+baretouchmidi.upload.maximum_size=28672
+baretouchmidi.upload.maximum_data_size=2560
+baretouchmidi.upload.speed=57600
+baretouchmidi.upload.disable_flushing=true
+baretouchmidi.upload.use_1200bps_touch=true
+baretouchmidi.upload.wait_for_upload_port=true
+
+baretouchmidi.bootloader.tool=arduino:avrdude
+baretouchmidi.bootloader.low_fuses=0xff
+baretouchmidi.bootloader.high_fuses=0xd8
+baretouchmidi.bootloader.extended_fuses=0xcb
+baretouchmidi.bootloader.file=caterina/Caterina-BareTouch.hex
+baretouchmidi.bootloader.unlock_bits=0x3F
+baretouchmidi.bootloader.lock_bits=0x2F
+
+baretouchmidi.build.mcu=atmega32u4
+baretouchmidi.build.f_cpu=16000000L
+baretouchmidi.build.vid=0x2A6E
+baretouchmidi.build.pid=0x8003
+baretouchmidi.build.usb_product="Touch Board"
+baretouchmidi.build.usb_manufacturer="Bare Conductive"
+baretouchmidi.build.board=AVR_BARETOUCH
+baretouchmidi.build.core=arcore
+baretouchmidi.build.variant=arduino:leonardo
+baretouchmidi.build.extra_flags=-DUSB_VID={build.vid} -DUSB_PID={build.pid} -DIPAD_COMPAT
+
+baretouchmidi.variant=arduino:standard
 
 ##############################################################

@@ -1,30 +1,20 @@
 #######################################
-# Syntax Coloring Map For Wire
+# Syntax Coloring Map For EEPROM
 #######################################
 
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
 
+EEPROM	KEYWORD1
+EERef	KEYWORD1
+EEPtr	KEYWORD2
+
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 
-begin	KEYWORD2
-setClock	KEYWORD2
-beginTransmission	KEYWORD2
-endTransmission	KEYWORD2
-requestFrom	KEYWORD2
-send	KEYWORD2
-receive	KEYWORD2
-onReceive	KEYWORD2
-onRequest	KEYWORD2
-
-#######################################
-# Instances (KEYWORD2)
-#######################################
-
-Wire	KEYWORD2
+update	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
