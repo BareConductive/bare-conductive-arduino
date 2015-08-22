@@ -1,4 +1,4 @@
-
+	
 #include "Platform.h"
 #include "USBAPI.h"
 #include "USBDesc.h"
@@ -11,7 +11,7 @@
 #define WEAK __attribute__ ((weak))
 
 #define CLASS_AUDIO 0x01
-#define SUBCLASS_AUDIO_CONTROL 0x01
+//#define SUBCLASS_AUDIO_CONTROL 0x01
 #define SUBCLASS_MIDISTREAMING 0x03
 
 #define TYPE_CS_INTERFACE 0x24
@@ -35,18 +35,18 @@ void watchdogReset() {
 }
 
 
-extern const ACDescriptor _acInterface PROGMEM;
-const ACDescriptor _acInterface =
-{
-	D_INTERFACE(AC_INTERFACE,0,CLASS_AUDIO,SUBCLASS_AUDIO_CONTROL,0),
-	{9, TYPE_CS_INTERFACE, SUBTYPE_HEADER, 0x0100, 9, 0x01, MIDI_INTERFACE}
-};
+// extern const ACDescriptor _acInterface PROGMEM;
+// const ACDescriptor _acInterface =
+// {
+// 	D_INTERFACE(AC_INTERFACE,0,CLASS_AUDIO,SUBCLASS_AUDIO_CONTROL,0),
+// 	{9, TYPE_CS_INTERFACE, SUBTYPE_HEADER, 0x0100, 9, 0x01, MIDI_INTERFACE}
+// };
 
-int WEAK AC_GetInterface(u8* interfaceNum)
-{
-	interfaceNum[0] += 1;	// uses 1
-	return USB_SendControl(TRANSFER_PGM,&_acInterface,sizeof(_acInterface));
-}
+// int WEAK AC_GetInterface(u8* interfaceNum)
+// {
+// 	interfaceNum[0] += 1;	// uses 1
+// 	return USB_SendControl(TRANSFER_PGM,&_acInterface,sizeof(_acInterface));
+// }
 
 extern const MIDIDescriptor _midiInterface PROGMEM;
 const MIDIDescriptor _midiInterface =

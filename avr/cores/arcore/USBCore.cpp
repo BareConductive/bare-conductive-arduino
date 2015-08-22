@@ -67,18 +67,12 @@ const u16 STRING_IMANUFACTURER[16] = {
 #endif
 };
 
-#ifdef CDC_ENABLED
-#define DEVICE_CLASS 0x02
-#else
-#define DEVICE_CLASS 0x00
-#endif
-
 //	DEVICE DESCRIPTOR
 const DeviceDescriptor USB_DeviceDescriptor =
 	D_DEVICE(0x00,0x00,0x00,64,USB_VID,USB_PID,0x100,IMANUFACTURER,IPRODUCT,0,1);
 
 const DeviceDescriptor USB_DeviceDescriptorA =
-	D_DEVICE(DEVICE_CLASS,0x00,0x00,64,USB_VID,USB_PID,0x100,IMANUFACTURER,IPRODUCT,0,1);
+	D_DEVICE(0xEF,0x02,0x01,64,USB_VID,USB_PID,0x100,IMANUFACTURER,IPRODUCT,0,1);
 
 //==================================================================
 //==================================================================
@@ -448,7 +442,7 @@ int SendInterfaces()
 #endif
 
 #ifdef MIDI_ENABLED
-	total += AC_GetInterface(&interfaces);
+//	total += AC_GetInterface(&interfaces);
 	total += MIDI_GetInterface(&interfaces);
 #endif
 
