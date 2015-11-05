@@ -1,4 +1,4 @@
-[![Bare Conductive](https://www.dropbox.com/s/7qmvpvst3kal3qv/LOGO_256x106.png?dl=1)](http://www.bareconductive.com/)
+[![Bare Conductive](http://bareconductive.com/assets/images/LOGO_256x106.png)](http://www.bareconductive.com/)
 
 # Bare Conductive Arduino Hardware Plugins
 
@@ -6,7 +6,7 @@ Board definitions for Bare Conductive Arduino-compatible boards, needed to use t
 
 ## Requirements
 
-* Arduino 1.5.6 or later
+* Arduino 1.6.6 or later
 
 
 ## Install
